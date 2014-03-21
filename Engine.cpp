@@ -1,7 +1,6 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "Keyboard.h"
-#include "Mouse.h"
 #include "Player.h"
 #include "Display.h"
 #include "SDL_ttf.h"
