@@ -1,3 +1,4 @@
+#include "Sprite.h"
 #include <vector>
 #include <string>
 using namespace std;
@@ -12,10 +13,10 @@ public:
 	int getWidth();
 	int getHeight();
 	char getTile(int,int);
+	void setOpen(int, int, bool);
+	bool getOpen(int, int);
 private:
 	int width, height;
 	vector< vector<char>> tileIndex;
 	string fileName;
 };
-
-#endif
