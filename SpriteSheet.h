@@ -9,8 +9,10 @@ using namespace std;
 	
 class SpriteSheet {
 public:
-	SpriteSheet(string, int);
+	SpriteSheet(string);
 	~SpriteSheet();
+	bool operator==(const SpriteSheet &) const;
+	string getPath();
 	SDL_Surface* getSurface();
 private:
 	SDL_Surface* loadSheet();
