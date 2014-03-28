@@ -1,8 +1,10 @@
 Reef Raider
 =================
 
-3/21/2014: Initialized repository
+Current Agenda:
 
-Current Known Bugs:
+Add particle effects
 
-Out of bounds rendering for tiles at indices x < 0 and y < 0 produces incorrect displays.
+Complete Ship / Projectile collisions and logic
+
+Begin enemy AI
