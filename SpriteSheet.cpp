@@ -2,14 +2,20 @@
 #include "SDL_image.h"
 #include "SDL.h"
 
-SpriteSheet::SpriteSheet(string fileName, int size) {
+SpriteSheet::SpriteSheet(string fileName) {
 	path = fileName;
-	sheetSize = size;
 	sheet = loadSheet();
 }
 
 SpriteSheet::~SpriteSheet() {
-	delete sheet;
+	SDL_FreeSurface(sheet);
+}
+
+bool SpriteSheet::operator==(const SpriteSheet& testSheet) const {
+	if(!path.compare(testSheet.path)) {
+		return true;
+	}
+	return false;
 }
 
 SDL_Surface* SpriteSheet::loadSheet() {
@@ -34,4 +40,8 @@ SDL_Surface* SpriteSheet::loadSheet() {
 
 SDL_Surface* SpriteSheet::getSurface() {
 	return sheet;
+}
+
+string SpriteSheet::getPath() {
+	return path;
 }
