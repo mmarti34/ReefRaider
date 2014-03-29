@@ -12,7 +12,8 @@ Area::Area(string path) {
 
 	vector<char> temp;
 	string currentLine;
-	int i;
+	height = 0;
+	unsigned int i;
 
 	while(!areaFile.eof()) {
 		
@@ -25,12 +26,12 @@ Area::Area(string path) {
 			}
 		}
 		
+		height++;
 		tileIndex.push_back(temp);
-	
+		
 	}
 
-	width = i;
-	height = tileIndex[0].size();
+	width = tileIndex[0].size();
 
 }
 
@@ -45,9 +46,20 @@ Area::Area(int areaW, int areaH) {
 	for(int y = 0; y < height; y++) {
 		
 		for(int x = 0; x < width; x++) {
-			if(rand() % 2 == 0) {
+			switch(rand() % 8) {
+			case 0:
+				temp.push_back('I');
+				break;
+			case 1:
 				temp.push_back('G');
-			} else {
+				break;
+			case 2:
+				temp.push_back('W');
+				break;
+			case 3: 
+				temp.push_back('B');
+				break;
+			default:
 				temp.push_back('I');
 			}
 		}
@@ -67,5 +79,5 @@ int Area::getHeight() {
 }
 
 char Area::getTile(int x, int y) {
-	return tileIndex[y][x];
+	 return tileIndex[y][x];
 }
